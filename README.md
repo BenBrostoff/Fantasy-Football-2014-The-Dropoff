@@ -1,4 +1,4 @@
-FF2014: The-Dropoff
+FF2014: The Dropoff
 ===================================
 
 A FF2014 player recommendation generator, The Dropoff is based on the premise that the best player available in a snake draft is the player where the next best at the given position has the highest dropoff in total points. 
