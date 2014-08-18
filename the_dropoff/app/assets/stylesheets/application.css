@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+.pos {
+  float: left;
+  display: inline-block;
+  margin-left: 1%;
+}
+
+.data {
+  font: 'Georgia';
+}
+
+table {
+  border: solid;
+}
+
+.normal {
+  background-color: #E6E6FA;
+}
+
+.elevated {
+  background-color: red;
+}

@@ -1,0 +1,18 @@
+<% @pos_array.each do |position| %>
+  <div class="pos">
+    <table class="data">
+    <% position.each_with_index do |player, index| %>
+      <% mark = "normal" if player.dropoff < 10 %>
+      <% mark = "elevated" if player.dropoff >= 10 %>
+      <tr class= <%= mark %>>
+         <td><%= "#{index + 1}. " %></td>
+         <td><%= player.name %></td>
+         <td><%= player.team %></td>
+         <td><%= player.position %></td>
+         <td><%= player.projection %></td>
+         <td><%= player.dropoff %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+<% end %>

@@ -5,6 +5,8 @@ class DropoffsController < ApplicationController
     @qbs = Player.where("position = 'QB'").order("projection DESC, dropoff DESC").take(10) 
     @wrs = Player.where("position = 'WR'").order("projection DESC, dropoff DESC").take(10)
     @tes = Player.where("position = 'TE'").order("projection DESC, dropoff DESC").take(10)
+    
+    @pos_array = [@rbs, @qbs, @wrs, @tes]
   end
 
 end
