@@ -10,3 +10,4 @@ class CreatePlayers < ActiveRecord::Migration
     end
   end
 end
+  
