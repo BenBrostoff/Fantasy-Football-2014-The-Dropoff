@@ -11,6 +11,7 @@
          <td><%= player.position %></td>
          <td><%= player.projection %></td>
          <td><%= player.dropoff %></td>
+         <td><%= link_to 'DRAFTED', drafted_path(player.id) %></td>
       </tr>
     <% end %>
     </table>
