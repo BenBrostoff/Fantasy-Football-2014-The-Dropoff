@@ -9,6 +9,10 @@ class DropoffsController < ApplicationController
     @pos_array = [@rbs, @qbs, @wrs, @tes]
   end
 
+  def offense
+    # group by teams
+  end
+
   def drafted
     @player = Player.find(params[:id])
     @player.destroy

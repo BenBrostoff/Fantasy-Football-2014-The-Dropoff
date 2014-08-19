@@ -1,18 +1,26 @@
 <% @pos_array.each do |position| %>
   <div class="pos">
     <table class="data">
-    <% position.each_with_index do |player, index| %>
-      <% mark = "normal" if player.dropoff < 10 %>
-      <% mark = "elevated" if player.dropoff >= 10 %>
-      <tr class= <%= mark %>>
-         <td><%= "#{index + 1}. " %></td>
-         <td><%= player.name %></td>
-         <td><%= player.team %></td>
-         <td><%= player.position %></td>
-         <td><%= player.projection %></td>
-         <td><%= player.dropoff %></td>
-         <td><%= link_to 'DRAFTED', drafted_path(player.id) %></td>
-      </tr>
+      <tr>
+      <td> Rank </td>
+      <td> Name </td>
+      <td> Team </td>
+      <td> Position </td>
+      <td> Projected Points </td>
+      <td> Dropoff </td>
+      <td> Drafted? </td>
+      <tr>
+      <% position.each_with_index do |player, index| %>
+        <% mark = mark_set(player.dropoff) %>
+        <tr class= <%= mark %>>
+           <td><%= "#{index + 1}. " %></td>
+           <td><%= player.name %></td>
+           <td><%= player.team %></td>
+           <td><%= player.position %></td>
+           <td><%= player.projection %></td>
+           <td><%= player.dropoff %></td>
+           <td><%= link_to 'X', drafted_path(player.id) %></td>
+        </tr>
     <% end %>
     </table>
   </div>

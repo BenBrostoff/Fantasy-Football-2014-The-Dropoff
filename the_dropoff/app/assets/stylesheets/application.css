@@ -14,24 +14,44 @@
  *= require_self
  */
 
+.container {
+  margin-left: 60px;
+  margin-top: 60px;
+}
+
 .pos {
   float: left;
   display: inline-block;
-  margin-left: 1%;
-}
-
-.data {
-  font: 'Georgia';
+  margin: 0.5%;
 }
 
 table {
   border: solid;
+  width: 550px;
+  font-family: 'Verdana';
+  font-size: 12.5px;
 }
 
 .normal {
   background-color: #E6E6FA;
 }
 
+.high_elevated{
+  background-color: #FF0000;
+}
+
 .elevated {
-  background-color: red;
+  background-color: #99FF66;
+}
+
+td {
+  font: 'Arial';
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
 }
