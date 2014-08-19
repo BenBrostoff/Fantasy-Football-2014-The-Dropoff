@@ -13,7 +13,11 @@
  *= require_tree .
  *= require_self
  */
-
+button {
+  width: 100px;
+  height: 30px;
+  background-color: orange;
+}
 .container {
   margin-left: 60px;
   margin-top: 60px;
