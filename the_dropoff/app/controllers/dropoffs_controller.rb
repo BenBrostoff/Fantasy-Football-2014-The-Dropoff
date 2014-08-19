@@ -10,7 +10,9 @@ class DropoffsController < ApplicationController
   end
 
   def reset
-    Player.all.each { |player| player.drafted = false }
+    Player.all.each { |player| player.update(drafted: false) }
+
+    redirect_to :root
   end
 
   def offense
@@ -19,7 +21,7 @@ class DropoffsController < ApplicationController
 
   def drafted
     @player = Player.find(params[:id])
-    @player.destroy
+    @player.update(drafted: true)
     redirect_to :root
   end
 
