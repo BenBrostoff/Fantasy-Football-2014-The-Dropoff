@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+button {
+  width: 100px;
+  height: 30px;
+  background-color: orange;
+}
+.container {
+  margin-left: 60px;
+  margin-top: 60px;
+}
+
+.pos {
+  float: left;
+  display: inline-block;
+  margin: 0.5%;
+}
+
+table {
+  border: solid;
+  width: 550px;
+  font-family: 'Verdana';
+  font-size: 12.5px;
+}
+
+.normal {
+  background-color: #E6E6FA;
+}
+
+.high_elevated{
+  background-color: #FF7F7F;
+}
+
+.elevated {
+  background-color: #99FF66;
+}
+
+td {
+  font: 'Arial';
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+}
