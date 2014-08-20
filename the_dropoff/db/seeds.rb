@@ -15,3 +15,7 @@ Player.all.each do |player|
   player.update(total_offense: player.calc_total_offense)
   player.update(perc_contribute: player.calc_perc_contribute)
 end
+
+Player.all.each do |player|
+  player.update(offense_percentile: player.calc_offense_percentile)
+end
