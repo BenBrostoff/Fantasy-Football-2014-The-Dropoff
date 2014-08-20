@@ -8,6 +8,8 @@
       <td> Position </td>
       <td> Projected Points </td>
       <td> Dropoff </td>
+      <td> Off. (%) </td>
+      <td> Contribute (%) </td>
       <td> Drafted? </td>
       <tr>
       <% position.each_with_index do |player, index| %>
@@ -19,6 +21,8 @@
            <td><%= player.position %></td>
            <td><%= player.projection %></td>
            <td><%= player.dropoff %></td>
+           <td><%= player.offensive_percentile %></td>
+           <td><%= player.perc_contribute.floor %></td>
            <td><%= link_to 'X', drafted_path(player.id) %></td>
         </tr>
     <% end %>

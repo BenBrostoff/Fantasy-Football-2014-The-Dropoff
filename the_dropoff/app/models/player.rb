@@ -15,5 +15,21 @@ class Player < ActiveRecord::Base
     (self.projection.to_f / self.total_offense.to_f) * 100
   end
 
+  def self.hash_teams
+    teams = {}
+    self.all.order("total_offense DESC").each do |player|
+      teams[player.team] = player.total_offense
+    end
+    return teams
+  end
+
+  def offensive_percentile
+    team_points = Player.hash_teams[self.team]
+    points_array = Player.hash_teams.values.reverse
+    position = points_array.index(team_points) + 1
+
+    return position * 100 / points_array.length
+
+  end
 
 end
