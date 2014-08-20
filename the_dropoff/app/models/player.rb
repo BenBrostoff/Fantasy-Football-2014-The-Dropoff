@@ -7,4 +7,13 @@ class Player < ActiveRecord::Base
     return -1 if next_tier.size == 0
   end
 
+  def calc_total_offense
+    Player.where(team: self.team).sum(:projection)
+  end
+
+  def calc_perc_contribute
+    (self.projection.to_f / self.total_offense.to_f) * 100
+  end
+
+
 end
