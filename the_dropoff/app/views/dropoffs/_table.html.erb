@@ -3,13 +3,14 @@
     <table class="data">
       <tr>
       <td> Rank </td>
-      <td> Name </td>
+      <td class = "player_name"> Name </td>
       <td> Team </td>
       <td> Position </td>
-      <td> Projected Points </td>
+      <td> Project </td>
       <td> Dropoff </td>
+      <td> Cont. (%) </td>
       <td> Off. (%) </td>
-      <td> Contribute (%) </td>
+      <td> Def. (%) </td>
       <td> Drafted? </td>
       <tr>
       <% position.each_with_index do |player, index| %>
@@ -21,8 +22,9 @@
            <td><%= player.position %></td>
            <td><%= player.projection %></td>
            <td><%= player.dropoff %></td>
-           <td><%= player.offense_percentile %></td>
            <td><%= player.perc_contribute %></td>
+           <td><%= player.offense_percentile %></td>
+           <td><%= player.defense_percentile %></td>
            <td><%= link_to 'X', drafted_path(player.id) %></td>
         </tr>
     <% end %>
