@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140820154346) do
+ActiveRecord::Schema.define(version: 20140830211023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 20140820154346) do
     t.integer  "total_offense"
     t.integer  "perc_contribute"
     t.integer  "offense_percentile"
+    t.integer  "defensive_percentile"
+    t.integer  "o_d_delta"
+    t.boolean  "offense",              default: true
   end
 
 end
