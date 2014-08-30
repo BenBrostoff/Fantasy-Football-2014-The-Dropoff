@@ -8,7 +8,7 @@ class Player < ActiveRecord::Base
   end
 
   def calc_total_offense
-    Player.where(team: self.team).sum(:projection)
+    Player.where(team: self.team, offense: true).sum(:projection)
   end
 
   def calc_perc_contribute
