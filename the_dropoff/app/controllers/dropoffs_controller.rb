@@ -10,15 +10,12 @@ class DropoffsController < ApplicationController
   end
 
   def reset
-    p "************"
     Player.all.each { |player| player.update(drafted: false, 
                                              dropoff: player.calc_dropoff) }
     redirect_to :root
-
   end
 
   def offense
-    # group by teams
   end
 
   def drafted
