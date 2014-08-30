@@ -21,11 +21,12 @@ end
 offense_hash = Player.hash_offense
 defense_hash = Player.hash_defense
 
+Player.where(offense: false).each do |player|
+  player.update(defense_percentile: player.calc_percentile(defense_hash))
+end
 
 Player.where(offense: true).each do |player|
   player.update(offense_percentile: player.calc_percentile(offense_hash))
-end
-
-Player.where(offense: false).each do |player|
-  player.update(defensive_percentile: player.calc_percentile(defense_hash))
+  player.update(defense_percentile: Player.where(position: "Def", team: player.team).first.defense_percentile)
+  player.update(o_d_delta: player.calc_o_d_delta)
 end

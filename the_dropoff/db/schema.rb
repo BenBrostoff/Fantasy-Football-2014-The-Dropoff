@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20140830211023) do
     t.integer  "total_offense"
     t.integer  "perc_contribute"
     t.integer  "offense_percentile"
-    t.integer  "defensive_percentile"
+    t.integer  "defense_percentile"
     t.integer  "o_d_delta"
-    t.boolean  "offense",              default: true
+    t.boolean  "offense",            default: true
   end
 
 end

@@ -1,3 +1,7 @@
+var refresh = function() {
+  window.location.replace("/");
+}
+
 var reset = function(){
     console.log("EXECUTING");
     return $.ajax({
@@ -6,12 +10,15 @@ var reset = function(){
   });
 }
 
+var resetAndRefresh = function() {
+  reset();
+  refresh();
+}
+
 var initialize = function() {
-  $(document).on("click", ".reset", reset)
-  console.log("BANKS");
+  $(document).on("click", ".reset", resetAndRefresh)
 }
 
 $(document).ready(function() {
-  console.log("BILL");
   initialize();
 });

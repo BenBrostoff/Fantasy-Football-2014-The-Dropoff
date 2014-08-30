@@ -18,7 +18,9 @@ button {
   height: 30px;
   background-color: orange;
 }
-
+.player_name {
+  width: 200px;
+}
 .container {
   margin-left: 60px;
   margin-top: 60px;
@@ -36,6 +38,7 @@ table {
   font-family: 'Verdana';
   font-size: 9.5px;
 }
+
 
 .normal {
   background-color: #E6E6FA;

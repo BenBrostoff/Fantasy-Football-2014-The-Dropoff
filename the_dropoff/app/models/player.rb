@@ -15,6 +15,10 @@ class Player < ActiveRecord::Base
     ((self.projection.to_f / self.total_offense.to_f) * 100).floor
   end
 
+  def calc_o_d_delta
+    self.offense_percentile - self.defense_percentile
+  end
+
   def self.hash_offense
     teams = {}
     self.all.order("total_offense DESC").each do |player|
@@ -33,18 +37,10 @@ class Player < ActiveRecord::Base
 
   def calc_percentile(rankings)
     team_points = rankings[self.team]
-    points_array = rankings.values.reverse
+    points_array = rankings.values.sort
     position = points_array.index(team_points) + 1
 
     return position * 100 / points_array.length
   end
-
-
-
-
-
-
-
-
 
 end
